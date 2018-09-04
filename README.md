@@ -1,6 +1,6 @@
 # About
 
-This project includes laboratory works on Python programming at master degree programm "Software Engineering" at Tomsk Polytechnic University.
+This project includes laboratory works on Python programming at master degree program "Software Engineering" at Tomsk Polytechnic University.
 
 ## Requirements
 
