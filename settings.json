@@ -1,0 +1,16 @@
+{
+    "python.pythonPath": "${workspaceFolder}/venv/bin/python",
+    "python.linting.pylintEnabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "python.autoComplete.showAdvancedMembers": false,
+    "python.autoComplete.addBrackets": true,
+    "python.formatting.provider": "black",
+    "breadcrumbs.enabled": true,
+    "prettier.eslintIntegration": true,
+    "prettier.semi": true,
+    "prettier.requireConfig": true,
+    "prettier.useTabs": false,
+    "prettier.tabWidth": 4,
+    "prettier.jsxBracketSameLine": true,
+}
