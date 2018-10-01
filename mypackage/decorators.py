@@ -18,7 +18,7 @@ def timeit(func):
 
 @timeit
 def mapper():
-    map(lambda x: x ** 2, [i for i in range(100)])
+    map(lambda x: x ** 2, [i for i in range(1_000_000)])
 
 
 def timeit_2(func):
@@ -38,8 +38,8 @@ def timeit_2(func):
 
 @timeit_2
 def mapper_2():
-    """Square list of range 100."""
-    map(lambda x: x ** 2, [i for i in range(100)])
+    """Square list of range 1_000_000."""
+    map(lambda x: x ** 2, [i for i in range(1_000_000)])
 
 
 @contextmanager
@@ -56,8 +56,8 @@ def timeit_3(min_secs):
 
 
 def mapper_3():
-    """Square list of range 100."""
-    map(lambda x: x ** 2, [i for i in range(100)])
+    """Square list of range 1000000."""
+    map(lambda x: x ** 2, [i for i in range(1_000_000)])
 
 
 if __name__ == "__main__":
