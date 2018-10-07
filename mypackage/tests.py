@@ -2,7 +2,6 @@ import unittest
 
 import generators
 import iterators
-import decorators
 
 
 class TestFibonacciGenerator(unittest.TestCase):
