@@ -16,11 +16,6 @@ def timeit(func):
     return wrapped
 
 
-@timeit
-def mapper():
-    map(lambda x: x ** 2, [i for i in range(1_000_000)])
-
-
 def timeit_2(func):
     import time
 
@@ -36,12 +31,6 @@ def timeit_2(func):
     return wrapped
 
 
-@timeit_2
-def mapper_2():
-    """Square list of range 1_000_000."""
-    map(lambda x: x ** 2, [i for i in range(1_000_000)])
-
-
 @contextmanager
 def timeit_3(min_secs):
     import time
@@ -55,18 +44,26 @@ def timeit_3(min_secs):
             print(f"Spent {round(end * 1000, 5)} µs")
 
 
-def mapper_3():
-    """Square list of range 1000000."""
-    map(lambda x: x ** 2, [i for i in range(1_000_000)])
-
-
 if __name__ == "__main__":
+    @timeit
+    def mapper():
+        map(lambda x: x ** 2, [i for i in range(1_000_000)])
+
     print("Decorator 1:")
     mapper()
+
+    @timeit_2
+    def mapper_2():
+        """Square list of range 1_000_000."""
+        map(lambda x: x ** 2, [i for i in range(1_000_000)])
 
     print("Decorator 2:")
     print(mapper_2.__doc__)
     mapper_2(1.4e-8)
+
+    def mapper_3():
+        """Square list of range 1000000."""
+        map(lambda x: x ** 2, [i for i in range(1_000_000)])
 
     print("Decorator 3:")
     with timeit_3(1.4e-8):

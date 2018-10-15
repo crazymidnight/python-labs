@@ -1,5 +1,8 @@
+import contextlib
+import types
 import unittest
 
+import decorators
 import generators
 import iterators
 
@@ -9,7 +12,7 @@ class TestFibonacciGenerator(unittest.TestCase):
 
     def test_length(self):
         """Test Fibonacci sequence length."""
-        fibonacci = [x for x in generators.fibonacci(10)]
+        fibonacci = list(generators.fibonacci(10))
         self.assertEqual(len(fibonacci), 10)
 
     def test_type(self):
@@ -113,23 +116,25 @@ class TestCountdownIterator(unittest.TestCase):
 
 
 class TestDecorator(unittest.TestCase):
-    """Test case for countdown iterator."""
+    """Test case for timeit decorator."""
 
-    def test_length(self):
-        """Test countdown sequence length."""
-        countdown = [x for x in iterators.CountdownIterator(10)]
-        self.assertEqual(len(countdown), 11)
+    def test_func(self):
+        """Test decorator 1 returns function."""
+        def func():
+            return 0
+        self.assertEqual(type(decorators.timeit(func)), types.FunctionType)
 
-    def test_type(self):
-        """Test type of countdown sequence element."""
-        countdown = [x for x in iterators.CountdownIterator(10)]
-        type_of_countdown = type(countdown[0])
-        self.assertTrue(type_of_countdown == int or type_of_countdown == float)
+    def test_func_2(self):
+        """Test decorator 2 returns function."""
+        def func():
+            return 0
+        self.assertEqual(type(decorators.timeit_2(func)), types.FunctionType)
 
-    def test_last_is_zero(self):
-        """Test countdown last element is zero."""
-        countdown = [x for x in iterators.CountdownIterator(10)]
-        self.assertEqual(countdown[::-1][0], 0)
+    def test_context(self):
+        """Test decorator 3 returns contextmanager."""
+        def func():
+            return 0
+        self.assertEqual(type(decorators.timeit_3(func)), contextlib._GeneratorContextManager)
 
 
 if __name__ == "__main__":
