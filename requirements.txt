@@ -52,7 +52,7 @@ Pygments==2.2.0
 pylint==2.1.1
 pyparsing==2.4.0
 pytest==3.8.1
-python-dateutil==2.7.3
+python-dateutil==2.8.0
 pytz==2018.6
 pyzmq==17.1.2
 qtconsole==4.4.1
