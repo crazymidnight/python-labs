@@ -9,7 +9,7 @@ click==6.7
 coverage==4.5.1
 cycler==0.10.0
 decorator==4.4.0
-entrypoints==0.2.3
+entrypoints==0.3
 flake8==3.7.7
 html5lib==1.0.1
 ipykernel==5.1.1
